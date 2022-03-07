@@ -1,0 +1,32 @@
+.history-drawer {
+  left: 0;
+}
+.history-cart {
+  background-color: #14a0983d;
+  padding: 8px 0px 0px;
+}
+
+.history-total {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+.quantity-badge {
+  height: 20px;
+  width: 54px;
+  background-color: #8080808a;
+  color: #000;
+  position: absolute;
+  right: 7px;
+  top: -8px;
+  text-align: center;
+}
+
+@media (max-width: 767px) {
+  .history-total {
+    position: static;
+    bottom: auto;
+    right: auto;
+  }
+}

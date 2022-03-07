@@ -1,0 +1,48 @@
+@startuml
+center header \n <font color=black size=15>Eretail</font>\n\n
+entity "customer" as e01 {
+  *id: BIGINT <<pk>>
+  --
+  *name: VARCHAR(50)
+  *email: VARCHAR(254)
+  *phone: VARCHAR(20)
+  *gender: VARCHAR(10)
+}
+
+note left of e01::gender
+Male/Female
+end note
+
+entity "order" as e02 {
+  *id: BIGINT <<pk>>
+  --
+  *user: CUSTOMER <<fk>>
+  *product_name: VARCHAR(500)
+  *total_products: VARCHAR(500)
+  *transaction_id: VARCHAR(150)
+  *total_amt: VARCHAR(50)
+}
+
+entity "product" as e03 {
+  *id: BIGINT <<pk>>
+  --
+  *name: VARCHAR(50)
+  *description: VARCHAR(250)
+  *price: VARCHAR(50)
+  *stock: VARCHAR(50)
+  *is_active: BIT DEFAULT 0 
+  *image: VARBINARY
+  *category: CATEGORY <<fk>>
+}
+
+entity "category" as e04 {
+  *id: BIGINT <<pk>>
+  --
+  *name: VARCHAR(50)
+  *description: VARCHAR(250)
+}
+
+e01 ||--o{ e02
+e02 }o--|{e03
+e03 }o--||e04
+@enduml

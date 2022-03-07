@@ -1,0 +1,23 @@
+.pagination {
+  margin: 15px auto 20px;
+  display: flex;
+  list-style: none;
+  outline: none;
+  justify-content: center;
+}
+
+.pagination a {
+  margin: 0px 1px;
+  background-color: #efefef;
+  padding: 5px 10px;
+  outline: none;
+  cursor: pointer;
+}
+
+.active a {
+  font-weight: bolder;
+}
+
+.pagination__link--disabled {
+  color: rgb(198, 197, 202);
+}
